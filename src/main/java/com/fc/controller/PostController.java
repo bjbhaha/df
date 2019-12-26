@@ -105,4 +105,18 @@ public class PostController {
         PrintWriter out = response.getWriter();
         out.write(jsonStr);
     }
+    
+        //去发帖的页面2
+    @RequestMapping("/toPublish2.do")
+    public String toPublish2(Model model){
+        List<Topic> topicList = topicService.listTopic();
+        model.addAttribute("topicList",topicList);
+        return "publish2";
+    }
+    //发帖2
+    @RequestMapping("/publishPost2.do")
+    public String publishPost2(Post post) {
+        int id = postService.publishPost(post);
+        return "redirect:toPost.do?pid="+id;
+    }
 }
