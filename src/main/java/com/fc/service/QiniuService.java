@@ -1,7 +1,7 @@
 package com.fc.service;
 
 import java.io.IOException;
-
+import org.*;
 import com.fc.util.MyConstant;
 import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
