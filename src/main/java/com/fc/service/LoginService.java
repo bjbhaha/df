@@ -35,25 +35,25 @@ public class LoginService {
         Pattern p = Pattern.compile("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\\.[a-zA-Z0-9_-]{2,3}){1,2})$");
         Matcher m = p.matcher(user.getEmail());
         if(!m.matches()){
-            return "邮箱格式有问题啊~";
+            return "邮箱格式有问题";
         }
 
         //校验密码长度
         p = Pattern.compile("^\\w{6,20}$");
         m = p.matcher(user.getPassword());
         if(!m.matches()){
-            return "密码长度要在6到20之间~";
+            return "密码长度要在6到20之间";
         }
 
         //检查密码
         if(!user.getPassword().equals(repassword)){
-            return "两次密码输入不一致~";
+            return "两次密码输入不一致";
         }
 
         //检查邮箱是否被注册
         int emailCount = userMapper.selectEmailCount(user.getEmail());
         if(emailCount>0){
-            return "该邮箱已被注册~";
+            return "该邮箱已被注册";
         }
 
         //构造user，设置未激活
@@ -82,14 +82,14 @@ public class LoginService {
         Integer uid = userMapper.selectUidByEmailAndPassword(user);
         if(uid==null){
             map.put("status","no");
-            map.put("error","用户名或密码错误~");
+            map.put("error","用户名或密码错误");
             return map;
         }
 
         int checkActived = userMapper.selectActived(user);
         if(checkActived==0){
             map.put("status","no");
-            map.put("error","您还没有激活账户哦，请前往邮箱激活~");
+            map.put("error","您还没有激活账户哦，请前往邮箱激活");
             return map;
         }
 
