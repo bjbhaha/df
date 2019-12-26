@@ -1,5 +1,6 @@
 package com.fc.service;
 
+import com.fc.mapper*;
 import com.fc.async.MessageTask;
 import com.fc.mapper.MessageMapper;
 import com.fc.mapper.PostMapper;
