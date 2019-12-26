@@ -3,6 +3,7 @@ package com.fc.model;
 
 public class Comment {
 
+    private String cname;
     private Integer cid;
 
     //评论内容
