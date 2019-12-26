@@ -59,6 +59,22 @@ public class UserController {
         return "profile";
     }
 
+        /**
+     * 查看我的个人主页
+     * @param session
+     * @param model
+     * @return
+     */
+    @RequestMapping("/toMyProfile.do")
+    public String toMyProfile(HttpSession session,Model model) {
+        int sessionUid = (int) session.getAttribute("uid");
+        User user = userService.getProfile(sessionUid, sessionUid);
+        List<Post> postList =  postService.getPostList(sessionUid);
+        model.addAttribute("user",user);
+        model.addAttribute("postList",postList);
+        return "myProfile";
+    }
+    
 
     /**
      * 去编辑信息的页面
