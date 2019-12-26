@@ -58,6 +58,9 @@ public class Info {
         this.Username = Username;
     }
 
+    public String getUsername(){
+       return this.username;   
+    }
     @Override
     public String toString() {
         return "Info{" +
