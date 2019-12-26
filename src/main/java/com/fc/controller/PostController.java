@@ -35,7 +35,20 @@ public class PostController {
     @Autowired
     private ReplyService replyService;
 
-
+    //去发帖的页面2
+    @RequestMapping("/toPublish2.do")
+    public String toPublish2(Model model){
+        List<Topic> topicList = topicService.listTopic();
+        model.addAttribute("topicList",topicList);
+        return "publish2";
+    }
+    //发帖2
+    @RequestMapping("/publishPost2.do")
+    public String publishPost2(Post post) {
+        int id = postService.publishPost(post);
+        return "redirect:toPost.do?pid="+id;
+    }
+    
     //去发帖的页面
     @RequestMapping("/toPublish.do")
     public String toPublish(Model model){
@@ -106,17 +119,5 @@ public class PostController {
         out.write(jsonStr);
     }
     
-        //去发帖的页面2
-    @RequestMapping("/toPublish2.do")
-    public String toPublish2(Model model){
-        List<Topic> topicList = topicService.listTopic();
-        model.addAttribute("topicList",topicList);
-        return "publish2";
-    }
-    //发帖2
-    @RequestMapping("/publishPost2.do")
-    public String publishPost2(Post post) {
-        int id = postService.publishPost(post);
-        return "redirect:toPost.do?pid="+id;
-    }
+
 }
