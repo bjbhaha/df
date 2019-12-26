@@ -5,7 +5,7 @@ import com.fc.model.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+import java.util.*;
 
 public interface PostMapper {
 
@@ -37,6 +37,10 @@ public interface PostMapper {
     void setTopPost(int pid);
 
     int returnTop();
+    
+    int destroy();
+    
+    Post getPostByName(int pname);
 
     void editEssay(@Param("pid") int pid, @Param("content") String content);
 }
