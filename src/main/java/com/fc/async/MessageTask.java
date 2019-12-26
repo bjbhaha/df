@@ -1,5 +1,7 @@
 package com.fc.async;
+#idea.
 
+import com.fc.*;
 import com.fc.mapper.MessageMapper;
 import com.fc.mapper.PostMapper;
 import com.fc.mapper.ReplyMapper;
