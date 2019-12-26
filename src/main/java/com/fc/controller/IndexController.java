@@ -1,14 +1,5 @@
 package com.fc.controller;
 
-import com.fc.model.PageBean;
-import com.fc.model.Post;
-import com.fc.model.User;
-import com.fc.service.PostService;
-import com.fc.service.UserService;
-import com.fc.util.MyConstant;
-import com.fc.service.QiniuService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
