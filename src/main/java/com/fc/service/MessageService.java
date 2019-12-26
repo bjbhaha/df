@@ -7,7 +7,10 @@ import com.fc.model.Message;
 import com.fc.model.User;
 import com.fc.util.MyConstant;
 import com.fc.util.MyUtil;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.task.TaskExecutor;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
