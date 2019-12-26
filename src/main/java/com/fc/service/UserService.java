@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.Transaction;
-
+import java.util.*;
 import java.util.List;
 
 
@@ -118,15 +118,15 @@ public class UserService {
 
         String oldPassword = userMapper.selectPasswordByUid(sessionUid);
         if(!oldPassword.equals(password)){
-            return "原密码输入错误~";
+            return "原密码输入错误";
         }
 
         if(newpassword.length()<6 ||newpassword.length()>20){
-            return "新密码长度要在6~20之间~";
+            return "新密码长度要在6~20之间";
         }
 
         if(!newpassword.equals(repassword)){
-            return "新密码两次输入不一致~";
+            return "新密码两次输入不一致";
         }
 
         userMapper.updatePassword(newpassword,sessionUid);
