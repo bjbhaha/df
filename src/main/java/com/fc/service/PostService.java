@@ -139,20 +139,6 @@ public class PostService {
         return pageBean;
     }
 
-    public Post getPostByPid(int pid) {
-        //更新浏览数
-        postMapper.updateScanCount(pid);
-        Post post =postMapper.getPostByPid(pid);
-        //设置点赞数
-        Jedis jedis = jedisPool.getResource();
-        long likeCount = jedis.scard(pid+":like");
-        post.setLikeCount((int)likeCount);
-
-        if(jedis!=null){
-            jedisPool.returnResource(jedis);
-        }
-        return post;
-    }
 
     //点赞
     public String clickLike(int pid, int sessionUid) {
