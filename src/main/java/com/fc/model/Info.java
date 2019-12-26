@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Info {
 
+    private String userName;
     private Integer iid;
     private String requestUrl;
     private String contextPath;
@@ -51,6 +52,10 @@ public class Info {
 
     public void setAccess_time(Date access_time) {
         this.access_time = access_time;
+    }
+    
+    public void setUsername(String Username){
+        this.Username = Username;
     }
 
     @Override
