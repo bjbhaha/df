@@ -1,10 +1,6 @@
 package com.fc.service;
 
-import com.fc.async.MessageTask;
-import com.fc.mapper.*;
-import com.fc.model.PageBean;
-import com.fc.model.Post;
-import com.fc.util.MyConstant;
+
 import com.fc.util.MyUtil;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
