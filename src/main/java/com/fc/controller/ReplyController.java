@@ -31,6 +31,11 @@ public class ReplyController {
         replyService.comment(pid,sessionUid,rid,content);
         return "redirect:toPost.do?pid="+pid;
     }
+    
+        @RequestMapping("/test.do")
+        public String comment(int pid,int rid, String content, HttpSession session){
+            eplayService.test(pid,rid,content,session);
+    }
 }
 
 
