@@ -66,6 +66,7 @@ public class Info {
                 ", contextPath='" + contextPath + '\'' +
                 ", remoteAddr='" + remoteAddr + '\'' +
                 ", access_time='" + access_time + '\'' +
+                  " username='" + username + '\'' +
                 '}';
     }
 }
