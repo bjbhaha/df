@@ -89,6 +89,9 @@ public class TopicController {
 
         return "command";
     }
+    
+    void draw_pixel(int ix,int iy) {  glBegin(GL_POINTS);  glVertex2i(ix,iy);  glEnd(); 
+}
 }
 
 
