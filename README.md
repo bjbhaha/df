@@ -19,7 +19,6 @@
         <h3>个人资料</h3>
             <dl>
               <dt>
-
                 <a href="http://my.csdn.net" target="_blank"><img name="" src="/t0100079c2a0ac4598d.jpg" alt="username" /></a>
               </dt>
             </dl>
