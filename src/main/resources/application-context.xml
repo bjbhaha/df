@@ -15,6 +15,7 @@
 
     <context:property-placeholder location="classpath:df.properties"/>
 
+
     <!--数据源-->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 <!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
@@ -72,6 +73,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
+
 
     <!-- 扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
